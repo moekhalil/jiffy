@@ -5,9 +5,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
-import { fetchTrending } from './redux/features/fetchTrending';
-
-store.dispatch(fetchTrending());
 
 ReactDOM.render(
   <Provider store={store}>

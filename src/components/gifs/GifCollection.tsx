@@ -1,21 +1,15 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { ITrendingStore, ISearchStore, Image } from '../../redux/features/types';
+import { Image, ISearchStore, ITrendingStore } from '../../redux/features/types';
 import GifCard from './GifCard';
 
-interface RootState {
-  trending: ITrendingStore;
-  search: ISearchStore;
+interface GifCollectionProps {
+  activeTabState: ISearchStore | ITrendingStore;
+  fetchMore: any;
 }
 
-const trendingReducer = (state: RootState) => state.trending;
-const searchReducer = (state: RootState) => state.search;
-
-const GifCollection = ({ activeTab, fetchMore }: { activeTab: string; fetchMore: any }) => {
-  const reducerType = activeTab === 'search' ? searchReducer : trendingReducer;
-  const reducerState = useSelector(reducerType);
-  const gifs = reducerState.gifs;
-  const isLoading = reducerState.loading === 'pending';
+const GifCollection = ({ activeTabState, fetchMore }: GifCollectionProps) => {
+  const gifs = activeTabState.gifs;
+  const isLoading = activeTabState.loading === 'pending';
 
   const [modalImage, setModalImage]: [Image | undefined, (image?: Image) => void] = useState();
 
