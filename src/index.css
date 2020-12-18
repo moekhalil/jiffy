@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+:root {
+  --background-main-color:  rgb(34, 33, 44);
+  --background-secondary-color: rgb(21, 19, 32);
+  --success-color: rgb(152, 255, 121);
+  --mint-color: rgb(146, 255, 234);
+  --pink-color:  rgb(247, 127, 192);
+  --purple-color: rgb(149, 129, 255);
+  --yellow-color: rgb(254, 255, 119);
+  --orange-color: rgb(247, 148, 125);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background-main-color);
+  font-family: 'Fira Code', monospace, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
